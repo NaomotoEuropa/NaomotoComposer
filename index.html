@@ -19,7 +19,7 @@
       <div id="unity-mobile-warning">
         Non sono supportati i dispositivi mobili.
       </div>
-	  <button id="quotation-button" onclick="Email.send()"></button>
+	  <button type="button" id="quotation-button" onclick="sendTheEmail()"></button>
       <div id="unity-footer">
         <div id="naomoto-logo"></div>
         <div id="unity-fullscreen-button"></div>
@@ -86,15 +86,17 @@
     </script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script>
-	Email.send({
-    SecureToken : "06fbb461-5d43-481a-8e32-21dc9c50e2be",
-    To : 'web@naomoto.it',
-    From : "noreply@naomoto.it",
-    Subject : "Richiesta Preventivo - Naomoto Composer",
-    Body : "E-Mail di Prova - Manuel"
-}).then(
-  message => alert(message)
-);
-</script>
+	function sendTheEmail(){
+		Email.send({
+		SecureToken : "06fbb461-5d43-481a-8e32-21dc9c50e2be",
+		To : 'web@naomoto.it',
+		From : "noreply@naomoto.it",
+		Subject : "Richiesta Preventivo - Naomoto Composer",
+		Body : "E-Mail di Prova - Manuel"
+	}).then(
+	  message => alert(message)
+	);
+	}
+	</script>
   </body>
 </html>
